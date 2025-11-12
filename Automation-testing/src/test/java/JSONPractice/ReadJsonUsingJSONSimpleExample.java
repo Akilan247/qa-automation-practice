@@ -1,11 +1,14 @@
 package JSONPractice;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 public class ReadJsonUsingJSONSimpleExample {
 
@@ -14,20 +17,23 @@ public class ReadJsonUsingJSONSimpleExample {
         // USING JSON-SIMPLE LIBRARY
 
         JSONParser jsonParser = new JSONParser();
-        File file;
-        file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\test-data\\data.json");
+
+        File file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\test-data\\data.json");
         try{
-            file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\test-data\\data.json");
             FileReader fileReader = new FileReader(file);
             Object obj = jsonParser.parse(fileReader);
-            JSONObject jsonObject = (JSONObject) obj;
+            JSONArray jsonArray = (JSONArray) obj;
 
-            String name =(String) jsonObject.get("name");
-            long age =(long) jsonObject.get("age");
+            for (Object object : jsonArray){
+                JSONObject jsonObject = (JSONObject) object;
+                String name =(String) jsonObject.get("name");
+                long age =(long) jsonObject.get("age");
 
-            System.out.println(name);
-            System.out.println(age);
-            System.out.println(jsonObject.get("skills"));
+//                System.out.print("Name :"+name+" ");
+//                System.out.print("Age :"+age+" ");
+//                System.out.print(" "+jsonObject.get("skills"));
+//                System.out.println();
+            }
 
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
@@ -36,8 +42,10 @@ public class ReadJsonUsingJSONSimpleExample {
 // USING JACKSON LIBRARY----
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Person person = objectMapper.readValue(file, Person.class);
+        List<Person> personList = objectMapper.readValue(file,new TypeReference<List<Person>>() {});
 
-//        System.out.println(person);
+        for (Person person : personList){
+            System.out.println(person);
+        }
     }
 }
