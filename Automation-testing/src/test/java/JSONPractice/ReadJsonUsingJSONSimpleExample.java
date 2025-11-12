@@ -1,15 +1,13 @@
 package JSONPractice;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ReadJsonExample {
+public class ReadJsonUsingJSONSimpleExample {
 
     public static void main(String[] args) throws IOException {
 
@@ -17,9 +15,9 @@ public class ReadJsonExample {
 
         JSONParser jsonParser = new JSONParser();
         File file;
-        file = new File("data.json");
+        file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\test-data\\data.json");
         try{
-            file = new File("data.json");
+            file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\test-data\\data.json");
             FileReader fileReader = new FileReader(file);
             Object obj = jsonParser.parse(fileReader);
             JSONObject jsonObject = (JSONObject) obj;
@@ -34,11 +32,12 @@ public class ReadJsonExample {
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
+
 // USING JACKSON LIBRARY----
 
         ObjectMapper objectMapper = new ObjectMapper();
         Person person = objectMapper.readValue(file, Person.class);
-//
+
 //        System.out.println(person);
     }
 }
