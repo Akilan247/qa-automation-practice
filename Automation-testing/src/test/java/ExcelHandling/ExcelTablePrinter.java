@@ -40,7 +40,6 @@ public class ExcelTablePrinter {
         System.out.println("|");
         System.out.println(border);
 
-
         for (int i = 1; i <= totalRows; i++) {
             for (int j = 0; j < totalCols; j++) {
                 XSSFCell cell = sheet.getRow(i).getCell(j);
