@@ -33,7 +33,6 @@ public class ExceptionPractice {
         }catch (InsufficientBalanceException e){
             System.out.println(e);
         }
-
     }
 
     public static boolean findPinLength(int pin){

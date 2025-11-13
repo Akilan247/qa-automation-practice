@@ -3,7 +3,10 @@ package JSONPractice;
 import org.openqa.selenium.json.Json;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class JsonCrudOperations {
 
@@ -20,7 +23,7 @@ public class JsonCrudOperations {
 
         //OVERWRITE THE EXISTING FILE
 
-//        JsonUtil.writeUserToJSon(person);
+        JsonUtil.writeUserToJSon(person);
 
 
     }

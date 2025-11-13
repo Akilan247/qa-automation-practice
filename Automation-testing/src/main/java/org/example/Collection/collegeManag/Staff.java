@@ -1,10 +1,13 @@
-package org.example.Collection;
+package org.example.Collection.collegeManag;
 
-public class Staff {
+import java.util.Comparator;
+
+public class Staff implements Comparator<Staff> {
     private int id;
     private String name;
     private int depId;
 
+    public Staff(){}
     public Staff(int id, String name, int depId){
         this.depId=depId;
         this.id = id;
@@ -33,8 +36,7 @@ public class Staff {
 
     @Override
     public String toString() {
-        return " Staff :" +
-                "\n\tid=" + id +
+        return "\tid=" + id +
                 ", name='" + name + '\'' +
                 ", depId=" + depId;
     }
@@ -45,5 +47,11 @@ public class Staff {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    @Override
+    public int compare(Staff o1, Staff o2) {
+        return o2.getId() - o1.getId();
     }
 }

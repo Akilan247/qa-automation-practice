@@ -1,6 +1,8 @@
-package org.example.Collection;
+package org.example.Collection.collegeManag;
 
-public class Student {
+import java.util.Comparator;
+
+public class Student implements Comparable<Student> {
     private int rollno;
     private String name;
     private int dept;
@@ -53,5 +55,11 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", dept='" + dept + '\'' +
                 ", mark=" + mark ;
+    }
+
+
+    @Override
+    public int compareTo(Student o) {
+        return  this.getMark()-o.getMark();
     }
 }
