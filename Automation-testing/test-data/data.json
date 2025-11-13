@@ -1,45 +1,17 @@
 [ {
-  "name" : "Ak",
-  "age" : 25,
-  "skills" : [ "Java", "Spring Boot", "React" ]
-}, {
-  "name" : "Ajay",
-  "age" : 27,
-  "skills" : [ "Python", "Django", "Flask" ]
-}, {
-  "name" : "Riya",
+  "name" : "Harish",
   "age" : 24,
-  "skills" : [ "HTML", "CSS", "JavaScript" ]
-}, {
-  "name" : "Karthik",
-  "age" : 26,
-  "skills" : [ "C++", "Data Structures", "Algorithms" ]
-}, {
-  "name" : "Meena",
-  "age" : 23,
-  "skills" : [ "Java", "Hibernate", "MySQL" ]
-}, {
-  "name" : "Rohit",
-  "age" : 28,
-  "skills" : [ "React", "Node.js", "MongoDB" ]
-}, {
-  "name" : "Divya",
-  "age" : 25,
-  "skills" : [ "Angular", "TypeScript", "REST API" ]
-}, {
-  "name" : "Arun",
-  "age" : 29,
-  "skills" : [ "AWS", "Docker", "Kubernetes" ]
-}, {
-  "name" : "Sneha",
-  "age" : 24,
-  "skills" : [ "Spring Boot", "Microservices", "PostgreSQL" ]
-}, {
-  "name" : "Praveen",
-  "age" : 30,
-  "skills" : [ "Java", "Spring Security", "React" ]
+  "skills" : [ "Java", "C", "C++" ]
 }, {
   "name" : "sugash",
-  "age" : 25,
+  "age" : 24,
+  "skills" : [ "Java", "C", "C++" ]
+}, {
+  "name" : "Aravinth",
+  "age" : 24,
+  "skills" : [ "Java", "C", "C++" ]
+}, {
+  "name" : "sugash",
+  "age" : 24,
   "skills" : [ "Java", "C", "C++" ]
 } ]
