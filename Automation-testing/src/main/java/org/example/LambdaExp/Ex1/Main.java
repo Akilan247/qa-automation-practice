@@ -22,7 +22,7 @@ public class Main {
         });
 
         List<Hotel> fivestarHotels = hotelServices.filterHotels((hotel) ->hotel.getHotelType()
-                                                                                     .equals(HotelType.FIVE_STAR));
+                .equals(HotelType.FIVE_STAR));
 
         fivestarHotels.forEach(System.out::println);
 
