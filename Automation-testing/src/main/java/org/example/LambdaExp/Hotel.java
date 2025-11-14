@@ -34,4 +34,11 @@ public class Hotel {
     public void setHotelType(HotelType hotelType) {
         this.hotelType = hotelType;
     }
+
+    @Override
+    public String toString(){
+        return "Hotel Id : " + id +
+                " price per night :" + price +
+                " Type : " + hotelType;
+    }
 }
