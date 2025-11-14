@@ -1,4 +1,4 @@
-package org.example.LambdaExp;
+package org.example.LambdaExp.Ex1;
 
 public class Hotel {
     private int id;
@@ -33,5 +33,12 @@ public class Hotel {
 
     public void setHotelType(HotelType hotelType) {
         this.hotelType = hotelType;
+    }
+
+    @Override
+    public String toString(){
+        return "Hotel Id : " + id +
+                " price per night :" + price +
+                " Type : " + hotelType;
     }
 }
