@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="All Test Suite">
-    <test name="D:/Automation-testing">
+<suite name="All Test Suite" >
+
+<!--    <groups>-->
+<!--        <run>-->
+<!--            <include name=""-->
+<!--        </run>-->
+<!--    </groups>-->
+<!--    -->
+
+    <listeners>
+        <listener class-name="SeleniumTesting.ListenersEx.MyListener"></listener>
+    </listeners>
+
+<!--    <test name="t1">-->
+<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--        <classes>-->
+<!--           <class name="SeleniumTesting.dropdown.DropDownExample"></class>-->
+<!--            <class name="SeleniumTesting.screenshotEx.TakeScreenShotEx"></class>-->
+<!--            <class name="SeleniumTesting.ListenersEx.BasicTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="t2">
+        <parameter name="browser" value="edge"></parameter>
         <classes>
 
+            <class name="SeleniumTesting.ListenersEx.BasicTest"></class>
         </classes>
     </test>
+
     
-    <test name="test2">
-        <classes>
-            <class name="BasicTest"/>
-<!--            <class name="SecondTest"/>-->
-        </classes>
-    </test>
+<!--    <test name="test2">-->
+<!--        <classes>-->
+<!--            <class name="SeleniumTesting.ListenersEx.BasicTest"/>-->
+<!--&lt;!&ndash;            <class name="SecondTest"/>&ndash;&gt;-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

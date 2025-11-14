@@ -1,7 +1,11 @@
+package SeleniumTesting.ListenersEx;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -14,9 +18,16 @@ public class BasicTest {
 
     WebDriver webDriver;
     WebDriverWait webDriverWait;
-    @BeforeClass
-    void openBrowser(){
-       webDriver = new EdgeDriver();
+    @BeforeTest
+    @Parameters({"browser"})
+    void openBrowser(String ch){
+       switch (ch){
+           case "chrome" : webDriver = new ChromeDriver(); break;
+           case "edge" : webDriver = new EdgeDriver(); break;
+           case "firefox" : webDriver = new FirefoxDriver(); return;
+           default:
+               System.out.println("Invalid Browser..");
+        }
        webDriverWait = new WebDriverWait(webDriver,Duration.ofSeconds(10));
        webDriver.get("https://www.saucedemo.com/");
        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -28,16 +39,27 @@ public class BasicTest {
         webDriver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(pswd);
         webDriver.findElement(By.xpath("//*[@id=\"login-button\"]")).click();
 
-        WebElement logout = webDriver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]"));
+        webDriver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+
+        WebElement logout = webDriver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
+
+        System.out.println(webDriverWait.until(ExpectedConditions.visibilityOf(logout)).getText());
+
         boolean status = Objects.requireNonNull(webDriverWait.until(ExpectedConditions.visibilityOf(logout))).isDisplayed();
 
         if(status){
-            Objects.requireNonNull(webDriverWait.until(ExpectedConditions.visibilityOf(logout))).click();
+            logout.click();
             Assert.assertTrue(status);
         }else {
             Assert.fail();
         }
     }
+
+    @AfterTest
+    public void closeBrowser(){
+        webDriver.quit();
+    }
+
 
     @DataProvider(name="dp")
     Object[][] loginData(){
@@ -49,7 +71,6 @@ public class BasicTest {
                 {"standard_user","secret_sauce"},
                 {"standard_user","secret_sauce"}
         };
-
         return data;
     }
 }
