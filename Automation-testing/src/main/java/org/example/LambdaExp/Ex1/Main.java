@@ -8,9 +8,6 @@ public class Main {
     public static void main(String[] args) {
         HotelServices hotelServices = new HotelServices();
 
-
-
-
         List<Hotel> threetarHotels = hotelServices.filterHotels(new Predicate() {
 
             @Override
