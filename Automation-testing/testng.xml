@@ -26,7 +26,6 @@
     <test name="t2">
         <parameter name="browser" value="edge"/>
         <classes>
-
             <class name="SeleniumTesting.ListenersEx.BasicTest"/>
         </classes>
     </test>

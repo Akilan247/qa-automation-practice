@@ -25,7 +25,7 @@ public class ExtentReportManager implements ITestListener {
     @Override
     public void onStart(ITestContext context) {
 
-        File file = new File("D:\\GITHUB\\qa-automation-practice\\Automation-testing\\src\\test\\Reports\\" +
+        File file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\src\\test\\Reports" +
                 "myRepo.html");
 
         extentSparkReporter = new ExtentSparkReporter(file);
@@ -57,8 +57,8 @@ public class ExtentReportManager implements ITestListener {
             TakesScreenshot ts = (TakesScreenshot) driver;
             File srcFile = ts.getScreenshotAs(OutputType.FILE);
 
-            String screenshotPath = "D:\\GITHUB\\qa-automation-practice\\Automation-testing\\" +
-                    "src\\test\\java\\SeleniumTesting\\ListenersEx\\"+ result.getName()+".png";
+            String screenshotPath ="C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\A" +
+                    "utomation-testing\\src\\test\\java\\SeleniumTesting\\ListenersEx"+ result.getName()+".png";
 
             File destFile = new File(screenshotPath);
 
