@@ -11,7 +11,8 @@ public class ReadPropertiesExample {
 
         Properties properties = new Properties();
 
-        FileInputStream  fileInputStream = new FileInputStream(new File("C:\\Users\\aximsoft\\IdeaProjects\\Collection-Practice\\data.properties"));
+        FileInputStream  fileInputStream = new FileInputStream(new File("C:\\Users\\aximsoft\\" +
+                "IdeaProjects\\Collection-Practice\\data.properties"));
 
         properties.load(fileInputStream);
 

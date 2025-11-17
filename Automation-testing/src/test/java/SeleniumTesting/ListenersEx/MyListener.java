@@ -25,14 +25,12 @@ public class MyListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
 
         BasicTest testClass = (BasicTest)result.getInstance();
-
         WebDriver driver = (testClass).webDriver;
-
             TakesScreenshot ts = (TakesScreenshot) driver;
             File srcFile = ts.getScreenshotAs(OutputType.FILE);
 
-            String screenshotPath = "C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\Automation-testing\\src\\" +
-                    "test\\java\\SeleniumTesting\\ListenersEx\\"+ result.getName()+".png";
+            String screenshotPath = "D:\\GITHUB\\qa-automation-practice\\Automation-testing\\" +
+                    "src\\test\\java\\SeleniumTesting\\ListenersEx\\"+ result.getName()+".png";
 
             File destFile = new File(screenshotPath);
 
