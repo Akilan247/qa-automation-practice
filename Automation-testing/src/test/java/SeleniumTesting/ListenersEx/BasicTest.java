@@ -72,7 +72,6 @@ public class BasicTest {
         webDriver.close();
     }
 
-
     @DataProvider(name = "dp")
     public Object[][] getJsonData() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
