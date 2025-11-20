@@ -2,32 +2,30 @@ package SeleniumTesting.ListenersEx;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.FileHandling.csvExample.CSVWritter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.io.File;
+import java.io.*;
+import java.sql.Driver;
 import java.time.Duration;
-import java.util.Objects;
 
-public class BasicTest {
+public class BasicLoginTest {
 
     WebDriver webDriver;
+
     WebDriverWait webDriverWait;
-    @BeforeTest
+
+    @BeforeMethod
     @Parameters({"browser"})
     void openBrowser(@Optional("chrome") String browser){
 
-        if (browser == null) {
-            browser = System.getProperty("browser", "chrome");
-        }
        switch (browser){
            case "chrome" : webDriver = new ChromeDriver(); break;
            case "edge" : webDriver = new EdgeDriver(); break;
@@ -35,42 +33,43 @@ public class BasicTest {
            default:
                System.out.println("Invalid Browser..");
         }
-       webDriverWait = new WebDriverWait(webDriver,Duration.ofSeconds(10));
-       webDriver.get("https://www.saucedemo.com/");
-       webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        DriverManager.setWebDriver(webDriver);
+
+       webDriverWait = new WebDriverWait(DriverManager.getWebDriver(),Duration.ofSeconds(10));
+       DriverManager.getWebDriver().get("https://www.saucedemo.com/");
     }
 
-    @Test(dataProvider = "dp")
+    @Test(dataProvider = "data-from-csv", threadPoolSize = 5)
     void login(String username,String pswd){
-        webDriver.findElement(By.xpath("//*[@id='user-name']")).sendKeys(username);
-        webDriver.findElement(By.xpath("//*[@id='password']")).sendKeys(pswd);
-        webDriver.findElement(By.xpath("//*[@id='login-button']")).click();
 
-//        webDriver.findElement(By.xpath("//*[@id='react-burger-menu-btn']")).click();
-//
-//        WebElement logout = webDriver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
+        WebDriver driver = DriverManager.getWebDriver();
 
-//        System.out.println(webDriverWait.until(ExpectedConditions.visibilityOf(logout)).getText());
+        driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys(username);
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys(pswd);
+        driver.findElement(By.xpath("//*[@id='login-button']")).click();
 
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
-        String actualUrl = webDriver.getCurrentUrl();
+        String actualUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(actualUrl,expectedUrl);
-
-//        boolean status = Objects.requireNonNull(webDriverWait.until(ExpectedConditions.visibilityOf(logout))).isDisplayed();
-//
-//        if(status){
-//            logout.click();
-//        }else {
-//            Assert.assertTrue(true);
-//        }
-    }
-
+     }
 
     @AfterMethod
     public void closeBrowser(){
-        webDriver.close();
+        DriverManager.getWebDriver().quit();
+        DriverManager.removeWebDriver();
     }
+
+    @DataProvider(name = "data-from-csv", parallel = true)
+    public Object[][] dataFromCSV() throws IOException {
+
+        return CSVWritter.csvWritter();
+    }
+
+
+
+
 
     @DataProvider(name = "dp")
     public Object[][] getJsonData() throws Exception {
@@ -89,8 +88,6 @@ public class BasicTest {
         }
         return data;
     }
-
-
 
 //
 //    @DataProvider(name="dp")

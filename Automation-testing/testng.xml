@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="All Test Suite" >
+<suite name="All Test Suite">
 
 <!--    <groups>-->
 <!--        <run>-->
@@ -10,9 +10,9 @@
 <!--    </groups>-->
 <!--    -->
 
-    <listeners>
-        <listener class-name="SeleniumTesting.ListenersEx.ExtentReportManager"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="SeleniumTesting.ListenersEx.ExtentReportManager"/>-->
+<!--    </listeners>-->
 
 <!--    <test name="t1">-->
 <!--        <parameter name="browser" value="chrome"></parameter>-->
@@ -26,7 +26,11 @@
     <test name="t2">
         <parameter name="browser" value="edge"/>
         <classes>
-            <class name="SeleniumTesting.ListenersEx.BasicTest"/>
+            <class name="SeleniumTesting.ListenersEx.BasicLoginTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
         </classes>
     </test>
 
@@ -34,7 +38,6 @@
 <!--    <test name="test2">-->
 <!--        <classes>-->
 <!--            <class name="SeleniumTesting.ListenersEx.BasicTest"/>-->
-<!--&lt;!&ndash;            <class name="SecondTest"/>&ndash;&gt;-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

@@ -51,25 +51,25 @@ public class ExtentReportManager implements ITestListener {
         extentTest = extentReports.createTest(result.getName());
         extentTest.log(Status.FAIL,"Test case FAILED is : "+result.getName());
 
-        try {
-            BasicTest testClass = (BasicTest)result.getInstance();
-            WebDriver driver = (testClass).webDriver;
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            File srcFile = ts.getScreenshotAs(OutputType.FILE);
-
-            String screenshotPath ="C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\A" +
-                    "utomation-testing\\src\\test\\java\\SeleniumTesting\\ListenersEx"+ result.getName()+".png";
-
-            File destFile = new File(screenshotPath);
-
-            srcFile.renameTo(destFile);
-
-            driver.navigate().refresh();
-
-            System.out.println("Screenshot saved at: " + screenshotPath);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            BasicLoginTest testClass = (BasicLoginTest)result.getInstance();
+//            WebDriver driver = (testClass).webDriver;
+//            TakesScreenshot ts = (TakesScreenshot) driver;
+//            File srcFile = ts.getScreenshotAs(OutputType.FILE);
+//
+//            String screenshotPath ="C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice\\A" +
+//                    "utomation-testing\\src\\test\\java\\SeleniumTesting\\ListenersEx"+ result.getName()+".png";
+//
+//            File destFile = new File(screenshotPath);
+//
+//            srcFile.renameTo(destFile);
+//
+//            driver.navigate().refresh();
+//
+//            System.out.println("Screenshot saved at: " + screenshotPath);
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Override

@@ -24,7 +24,7 @@ public class MyListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
 
-        BasicTest testClass = (BasicTest)result.getInstance();
+        BasicLoginTest testClass = (BasicLoginTest)result.getInstance();
         WebDriver driver = (testClass).webDriver;
             TakesScreenshot ts = (TakesScreenshot) driver;
             File srcFile = ts.getScreenshotAs(OutputType.FILE);
