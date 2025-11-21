@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-21T13:35:48 IST" name="All Test Suite" finished-at="2025-11-21T13:36:23 IST" duration-ms="35104">
+    <groups>
+    </groups>
+    <test started-at="2025-11-21T13:35:48 IST" name="t2" finished-at="2025-11-21T13:36:23 IST" duration-ms="35104">
+      <class name="SeleniumTesting.ListenersEx.BasicLoginTest">
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:35:50 IST" name="openBrowser" finished-at="2025-11-21T13:36:11 IST" duration-ms="21887" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:35:50 IST" name="openBrowser" finished-at="2025-11-21T13:36:12 IST" duration-ms="21912" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:35:50 IST" name="openBrowser" finished-at="2025-11-21T13:36:11 IST" duration-ms="21265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:35:50 IST" name="openBrowser" finished-at="2025-11-21T13:36:11 IST" duration-ms="21278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:35:50 IST" name="openBrowser" finished-at="2025-11-21T13:36:11 IST" duration-ms="21062" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:35:50 IST" name="openBrowser" finished-at="2025-11-21T13:36:10 IST" duration-ms="19951" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="login(org.example.FileHandling.csvExample.User)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:10 IST" name="login" data-provider="data-from-csv" finished-at="2025-11-21T13:36:12 IST" duration-ms="2494" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.example.FileHandling.csvExample.User@6a08785d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="login(org.example.FileHandling.csvExample.User)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:11 IST" name="login" data-provider="data-from-csv" finished-at="2025-11-21T13:36:17 IST" duration-ms="6021" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.example.FileHandling.csvExample.User@244ea5b7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="login(org.example.FileHandling.csvExample.User)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:11 IST" name="login" data-provider="data-from-csv" finished-at="2025-11-21T13:36:15 IST" duration-ms="4175" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.example.FileHandling.csvExample.User@4d66c93e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="login(org.example.FileHandling.csvExample.User)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:11 IST" name="login" data-provider="data-from-csv" finished-at="2025-11-21T13:36:20 IST" duration-ms="8841" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.example.FileHandling.csvExample.User@6f36ab6c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="login(org.example.FileHandling.csvExample.User)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:11 IST" name="login" data-provider="data-from-csv" finished-at="2025-11-21T13:36:15 IST" duration-ms="3782" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.example.FileHandling.csvExample.User@1b30766f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="login(org.example.FileHandling.csvExample.User)[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:12 IST" name="login" data-provider="data-from-csv" finished-at="2025-11-21T13:36:23 IST" duration-ms="11273" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.example.FileHandling.csvExample.User@6122a5c0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:12 IST" name="closeBrowser" finished-at="2025-11-21T13:36:21 IST" duration-ms="8737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:15 IST" name="closeBrowser" finished-at="2025-11-21T13:36:23 IST" duration-ms="7914" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:15 IST" name="closeBrowser" finished-at="2025-11-21T13:36:23 IST" duration-ms="7554" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:17 IST" name="closeBrowser" finished-at="2025-11-21T13:36:23 IST" duration-ms="6437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:20 IST" name="closeBrowser" finished-at="2025-11-21T13:36:21 IST" duration-ms="1007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SeleniumTesting.ListenersEx.BasicLoginTest@4fb0f2b9]" started-at="2025-11-21T13:36:23 IST" name="closeBrowser" finished-at="2025-11-21T13:36:23 IST" duration-ms="474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- SeleniumTesting.ListenersEx.BasicLoginTest -->
+    </test> <!-- t2 -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

@@ -3,6 +3,7 @@ package SeleniumTesting.ListenersEx;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.FileHandling.csvExample.CSVWritter;
+import org.example.FileHandling.csvExample.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +16,8 @@ import org.testng.annotations.*;
 import java.io.*;
 import java.sql.Driver;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BasicLoginTest {
 
@@ -41,12 +44,12 @@ public class BasicLoginTest {
     }
 
     @Test(dataProvider = "data-from-csv", threadPoolSize = 5)
-    void login(String username,String pswd){
+    void login(User user){
 
         WebDriver driver = DriverManager.getWebDriver();
 
-        driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys(username);
-        driver.findElement(By.xpath("//*[@id='password']")).sendKeys(pswd);
+        driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys(user.getUsername());
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys(user.getPassword());
         driver.findElement(By.xpath("//*[@id='login-button']")).click();
 
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
@@ -62,9 +65,26 @@ public class BasicLoginTest {
     }
 
     @DataProvider(name = "data-from-csv", parallel = true)
-    public Object[][] dataFromCSV() throws IOException {
+    public Object[] dataFromCSV() throws IOException {
 
-        return CSVWritter.csvWritter();
+        Object[][] data = CSVWritter.csvWritter();
+
+        Object[] userList = new Object[data.length];
+
+        for (int i = 0; i < data.length; i++) {
+            User user=new User();
+            for (int j = 0; j < data[i].length; j++) {
+                if (j==0){
+                    user.setUsername((data[i][j]).toString());
+                }
+                if(j==1){
+                    user.setPassword((data[i][j]).toString());
+                }
+            }
+            userList[i] = user;
+        }
+
+        return userList;
     }
 
 
@@ -72,7 +92,7 @@ public class BasicLoginTest {
 
 
     @DataProvider(name = "dp")
-    public Object[][] getJsonData() throws Exception {
+    public Object[][] getDataFromJson() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
 
         File file = new File("C:\\Users\\aximsoft\\IdeaProjects\\qa-automation-practice" +
@@ -94,7 +114,7 @@ public class BasicLoginTest {
 //    Object[][] loginData(){
 //        Object[][] data = {
 //                {"standard_user","secret_sauce"},
-////                {"locked_out_user","secret_sauce"},
+//                {"locked_out_user","secret_sauce"},
 //                {"problem_user","secret_sauce"},
 //                {"performance_glitch_user","secret_sauce"},
 //                {"standard_user","secret_sauce"},
